@@ -48,23 +48,20 @@ class _StoryPageState extends State<StoryPage> {
               ),
               Expanded(
                 flex: 2,
-                child: Visibility(
-                  visible: storyBrain.buttonShouldBeVisible(),
-                  child: TextButton(
-                    onPressed: () {
-                      setState(() {
-                        storyBrain.nextStory(1);
-                      });
-                    },
-                    style: const ButtonStyle(
-                      backgroundColor: MaterialStatePropertyAll(Colors.red),
-                    ),
-                    child: Text(
-                      storyBrain.getChoice1(),
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20.0,
-                      ),
+                child: TextButton(
+                  onPressed: () {
+                    setState(() {
+                      storyBrain.nextStory(1);
+                    });
+                  },
+                  style: const ButtonStyle(
+                    backgroundColor: MaterialStatePropertyAll(Colors.red),
+                  ),
+                  child: Text(
+                    storyBrain.getChoice1(),
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20.0,
                     ),
                   ),
                 ),
@@ -74,22 +71,25 @@ class _StoryPageState extends State<StoryPage> {
               ),
               Expanded(
                 flex: 2,
-                child: TextButton(
-                  onPressed: () {
-                    setState(() {
-                      storyBrain.nextStory(2);
-                    });
-                  },
-                  style: const ButtonStyle(
-                    backgroundColor: MaterialStatePropertyAll(
-                      Colors.blue,
+                child: Visibility(
+                  visible: storyBrain.buttonShouldBeVisible(),
+                  child: TextButton(
+                    onPressed: () {
+                      setState(() {
+                        storyBrain.nextStory(2);
+                      });
+                    },
+                    style: const ButtonStyle(
+                      backgroundColor: MaterialStatePropertyAll(
+                        Colors.blue,
+                      ),
                     ),
-                  ),
-                  child: Text(
-                    storyBrain.getChoice2(),
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20.0,
+                    child: Text(
+                      storyBrain.getChoice2(),
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20.0,
+                      ),
                     ),
                   ),
                 ),
